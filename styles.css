@@ -1,0 +1,398 @@
+/* Global Variables */
+:root {
+  --primary-color: rgb(2, 3, 129);
+  --secondary-color: #ecf0f1;
+  --accent-color: #3498db;
+  --font-family: "Chewy", cursive;
+  --btn-bg-color: #2980b9;
+  --btn-text-color: #ffffff;
+  --text-color: #000000; /* Added solid text color */
+}
+
+.dark-theme {
+  --color-primary: #5e503f;
+  --color-secondary: #e0e2db;
+  --color-text: #486c7c;
+  --color-background: #333333;
+  --color-design1: #949494;
+  --color-design2: #55917f;
+  --color-design3: #5e503f;
+}
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+body {
+  font-family: var(--font-family);
+  line-height: 1.6;
+  color: var(--text-color); /* Use solid text color */
+  background-color: var(--secondary-color);
+  margin: 0;
+  scroll-snap-type: y mandatory; /* Enable scroll snapping */
+}
+
+/* Header */
+.main-header {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 1rem 2rem;
+  position: sticky; /* Keep header sticky */
+  top: 0;
+  z-index: 1000; /* Ensure it stays on top */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  color: var(--color-text);
+  font-weight: 800;
+}
+
+header h1::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-text);
+}
+
+.logo {
+  color: var(--text-color);
+  font-weight: 800;
+}
+
+#home h1 {
+  font-size: 3rem;
+  font-weight: 1000;
+}
+
+.logo-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  padding: 0.5rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin: 0 1rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--color-text);
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--accent-color);
+}
+
+.nav-links a.active {
+  color: var(--color-primary);
+}
+
+.nav-links a.active::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primary);
+}
+
+#toggle,
+#sidebar {
+  width: 50px;
+  height: 50px;
+}
+
+#sun,
+#moon,
+#close {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#sun:hover,
+#moon:hover {
+  cursor: pointer;
+}
+
+#end {
+  display: flex;
+  flex-direction: row;
+}
+
+#sidebar {
+  display: block;
+}
+
+#template1 {
+  display: none;
+}
+
+/* Sections */
+.section {
+  padding: 2rem;
+  text-align: center;
+  min-height: 100vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  scroll-snap-align: start; /* Snap alignment for each section */
+}
+
+.section h1 {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.section h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-secondary);
+}
+
+.section p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 0.3rem;
+}
+
+/* Resource Cards */
+.resource-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: var(--secondary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 8px;
+  padding: 1rem;
+  width: 250px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.form textarea:focus {
+  outline: none;
+  border-color: #aaa;
+}
+
+/* Buttons */
+.btn-primary {
+  background: var(--btn-bg-color);
+  color: var(--btn-text-color);
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: var(--accent-color);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+footer p {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Media Queries for Mobile Optimization */
+@media screen and (max-width: 768px) {
+  html {
+    scroll-snap-type: none;
+  }
+
+  body {
+    width: 100%;
+  }
+
+  .main-header {
+    padding: 0.5rem 1rem; /* Reduce padding for mobile */
+  }
+
+  header {
+    padding: 1rem;
+    height: 3.5em;
+    color: var(--text-color);
+  }
+
+  header h1 {
+    font-size: 1.2rem;
+  }
+
+  header h1::after {
+    height: 1px;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: end;
+    position: absolute;
+    top: 3.5em;
+    right: 0;
+    width: 40%;
+    height: 22vh;
+    padding-right: 1rem;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    text-align: center;
+    overflow: hidden;
+    transition: 0.7s;
+  }
+
+  .nav-links li {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-right: 0.3rem;
+  }
+
+  .section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    padding: 0 1rem;
+  }
+
+  .card {
+    width: 90%; /* Make cards responsive */
+    max-width: 300px; /* Set a max width */
+  }
+
+  #paper {
+    color: #fff;
+    font-size: 20px;
+  }
+  #margin {
+    margin-left: 12px;
+    margin-bottom: 20px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+  }
+  #text {
+    width: 100%;
+    overflow: hidden;
+    background-color: #fff;
+    color: #222;
+    font-family: Courier, monospace;
+    font-weight: normal;
+    font-size: 24px;
+    resize: none;
+    line-height: 40px;
+    padding-left: 100px;
+    padding-right: 100px;
+    background-image: url(https://static.tumblr.com/maopbtg/E9Bmgtoht/lines.png),
+      url(https://static.tumblr.com/maopbtg/nBUmgtogx/paper.png);
+    background-repeat: repeat-y, repeat;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    border-top: 1px solid var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
+  }
+  #title {
+    background-color: transparent;
+    border-bottom: 3px solid var(--primary-color);
+    color: #fff;
+    font-size: 20px;
+    font-family: Courier, monospace;
+    height: 28px;
+    font-weight: bold;
+    width: 220px;
+  }
+  #button {
+    cursor: pointer;
+    margin-top: 20px;
+    float: middle;
+    height: 40px;
+    padding-left: 24px;
+    padding-right: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: #fff;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    border-top: 1px solid #fff;
+    background-color: #62add6;
+    background-image: url(https://static.tumblr.com/maopbtg/ZHLmgtok7/button.png);
+    background-repeat: repeat-x;
+  }
+  #button:active {
+    zoom: 1;
+    filter: alpha(opacity=80);
+    opacity: 0.8;
+  }
+  #button:focus {
+    zoom: 1;
+    filter: alpha(opacity=80);
+    opacity: 0.8;
+  }
+  #wrapper {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #community {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  footer {
+    font-size: 0.9rem; /* Smaller footer text */
+  }
+}

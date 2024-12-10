@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RUNACOSS Digital Hub</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chewy&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Link to external JavaScript file -->
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header class="main-header">
+      <nav id="navbar">
+        <img src="images/logo.png" alt="RUNACOSS Logo" class="logo-image" />
+        <div class="logo">RUNACOSS Digital Hub</div>
+        <ul class="nav-links" aria-label="Main Navigation">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#resources">Resources</a></li>
+          <li><a href="#community">Community</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div id="end">
+        <div id="toggle">
+          <img src="images/moon.svg" alt="Toggle dark mode" id="moon" />
+        </div>
+        <div id="sidebar">
+          <img
+            src="images/menu.svg"
+            alt="Open menu"
+            id="close"
+            onclick="togglemenu()"
+          />
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <div id="template">
+        <img src="images/abstract.png" alt="Illustration" id="template1" />
+      </div>
+      <section id="home" class="section">
+        <h1>Welcome to RUNACOSS Digital Hub</h1>
+        <p>Your one-stop platform for academic and professional growth.</p>
+      </section>
+
+      <section id="about" class="section">
+        <h2>About Us</h2>
+        <p>
+          The RUNACOSS Digital Hub is designed to provide students with access
+          to resources, communication tools, and professional guidance in one
+          centralized platform.
+        </p>
+      </section>
+
+      <section id="resources" class="section">
+        <h2>Resources</h2>
+        <div class="resource-cards">
+          <div class="card">
+            <h3>Course Materials</h3>
+            <p>Access study materials, past questions, and assignments.</p>
+          </div>
+          <div class="card">
+            <h3>Career Development</h3>
+            <p>Find internships, job opportunities, and CV tips.</p>
+          </div>
+          <div class="card">
+            <h3>Skill Enhancement</h3>
+            <p>
+              Learn programming, AI/ML, and data science through curated
+              resources.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="community" class="section">
+        <h2>Community Forum</h2>
+        <p>Engage with peers, share knowledge, and grow together.</p>
+        <div id="wrapper">
+          <form id="paper" method="get" action="">
+            <textarea
+              placeholder="Enter something."
+              id="text"
+              name="text"
+              rows="4"
+              style="
+                overflow: hidden;
+                word-wrap: break-word;
+                resize: none;
+                height: 240px;
+              "
+            ></textarea>
+            <br />
+            <input id="button" type="submit" value="Post" />
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+      <p>
+        &copy; 2024 RUNACOSS Digital Hub. All rights reserved. Created by Akande
+        David.
+      </p>
+    </footer>
+  </body>
+</html>
